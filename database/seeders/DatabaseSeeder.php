@@ -2,8 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+use App\Models\Department;
+use App\Models\Employee;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Position;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,9 +18,36 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        User::create([
+            'name' => 'Iksan Fauzi Nugraha',
+            'email' => 'iksanfauzi727@gmail.com',
+            'password' => bcrypt('password'),
+            'email_verified_at' => now(),
         ]);
+
+        $departments = [
+            ['name' => 'MBA', 'active' => true],
+            ['name' => 'RCS', 'active' => true],
+            ['name' => 'ZBS', 'active' => true],
+            ['name' => 'VSI', 'active' => true],
+        ];
+        foreach ($departments as $department) {
+            Department::create($department);
+        }
+
+        $position = [
+            ['name' => 'Team IT AS'],
+            ['name' => 'Team IMP'],
+            ['name' => 'Team Payment'],
+            ['name' => 'Team Pemetaan'],
+            ['name' => 'Team Devel'],
+        ];
+
+        foreach ($position as $item) {
+            Position::create($item);
+        }
+
+        Employee::factory(20)->create();
+
     }
 }

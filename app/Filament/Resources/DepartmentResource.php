@@ -22,7 +22,7 @@ class DepartmentResource extends Resource
 
     protected static ?string $model = Department::class;
 
-    protected static ?string $navigationGroup = 'Resources';
+    protected static ?string $navigationGroup = 'Resources Management';
 
     protected static ?string $navigationIcon = 'heroicon-o-rocket-launch';
 

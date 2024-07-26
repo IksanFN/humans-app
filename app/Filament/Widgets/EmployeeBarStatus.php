@@ -24,14 +24,14 @@ class EmployeeBarStatus extends ChartWidget
         $active = Employee::where('status', EmployeeStatus::ACTIVE)->count();
         $inactive = Employee::where('status', EmployeeStatus::INACTIVE)->count();
         $onLeave = Employee::where('status', EmployeeStatus::ON_LEAVE)->count();
-        
+
         return [
             'labels' => ['Active', 'In Active', 'On Leave'],
             'datasets' => [
                 [
                     'label' => 'Employee Status',
                     'data' => ["{$active}", "{$inactive}", "{$onLeave}"],
-                    
+
                 ],
             ],
         ];

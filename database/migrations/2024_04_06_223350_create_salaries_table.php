@@ -11,8 +11,8 @@ return new class extends Migration
         Schema::create('salaries', function (Blueprint $table) {
             $table->id();
             $table->foreignId('employee_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            $table->integer('amount');
-            $table->date('effective_date');
+            $table->double('amount');
+            $table->date('effective_date')->nullable()->defaultValue;
             $table->timestamps();
         });
     }

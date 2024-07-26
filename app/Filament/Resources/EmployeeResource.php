@@ -46,7 +46,7 @@ class EmployeeResource extends Resource
                     ->options(Department::query()->whereActive(true)->pluck('name', 'id'))
                     ->required(),
                 Forms\Components\Select::make('position_id')
-                    ->label('Employee Name')
+                    ->label('Position Name')
                     ->searchable()
                     ->live()
                     ->preload()
@@ -158,7 +158,7 @@ class EmployeeResource extends Resource
                     ->color(fn ($state) => $state->getColor())
                     ->icon(fn ($state) => $state->getIcon()),
             ])->columns(2)->columnSpanFull()
-            
+
         ]);
     }
 

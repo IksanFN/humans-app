@@ -29,8 +29,9 @@ class AppPanelProvider extends PanelProvider
             ->path('/')
             ->login()
             ->colors([
-                'primary' => Color::Purple,
+                'primary' => Color::Cyan,
             ])
+            ->topNavigation()
             ->brandName('Humans')
             ->profile(isSimple:false)
             ->databaseNotifications()
@@ -38,7 +39,7 @@ class AppPanelProvider extends PanelProvider
             ->darkMode(condition:true, isForced:false)
             ->navigationGroups([
                 'Employee Management',
-                'Resources',
+                'Resources Management',
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')

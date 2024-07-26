@@ -12,20 +12,19 @@ class Stats extends BaseWidget
 {
     protected function getStats(): array
     {
-        // return Employee::count();
         return [
-            Stat::make('Employee', Employee::count())
+            Stat::make('Employees', Employee::count())
                 ->icon('heroicon-o-users')
                 ->color('primary')
-                ->description('Total number of employee'),
-            Stat::make('Department', Department::count())
+                ->description('Total number of employees'),
+            Stat::make('Departments', Department::count())
                 ->icon('heroicon-o-rocket-launch')
                 ->color('success')
-                ->description('Total number of department'),
-            Stat::make('Position', Position::count())
+                ->description('Total number of departments'),
+            Stat::make('Positions', Position::count())
                 ->icon('heroicon-o-user-group')
                 ->color('warning')
-                ->description('Total number of position'),
+                ->description('Total number of positions'),
         ];
     }
 }
